@@ -5,28 +5,12 @@ import  "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 
 contract Token is   ERC20 {
-    constructor(uint256 totalSupply1 ) ERC20( "Token","TOKEN"){
+    constructor(uint256 totalSupply1 , address second_address ) ERC20( "Token","TOKEN"){
 
         _mint(msg.sender,totalSupply1);
+        _mint(second_address,totalSupply1);
 
     }
 
-    //   uint public unlockTime;
-    // address payable public owner;
-    // event Withdrawal(uint amount, uint when);
-    // // constructor(uint _unlockTime) payable {
-    // //     require(
-    // //         block.timestamp < _unlockTime,
-    // //         "Unlock time should be in the future"
-    // //     );
-    // //     unlockTime = _unlockTime;
-    // //     owner = payable(msg.sender);
-    // // }
-    // function withdraw() public {
-    //     require(block.timestamp >= unlockTime, "You can't withdraw yet");
-    //     require(msg.sender == owner, "You aren't the owner");
-    //     emit Withdrawal(address(this).balance, block.timestamp);
-    //     owner.transfer(address(this).balance);
-    // }
 }
     
